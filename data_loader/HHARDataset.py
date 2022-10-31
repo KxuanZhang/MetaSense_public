@@ -127,6 +127,7 @@ class HHARDataset(torch.utils.data.Dataset):
             models = set([self.model])
 
         domain_superset = list(itertools.product(models, users))
+        self.domain_superset = domain_superset
         valid_domains = []
 
         for idx in range(max(len(self.df) // OVERLAPPING_WIN_LEN - 1, 0)):
